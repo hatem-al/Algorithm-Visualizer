@@ -8,6 +8,8 @@ class DrawInformation:
     BLACK = 0, 0, 0
     WHITE = 255, 255, 255
     BLUE = 0, 102, 204
+    RED = 240, 0, 0
+    GREEN = 20, 200, 50
     ORANGE = 255, 128, 0
     BACKGROUND_COLOR = (30, 30, 30)
 
@@ -98,7 +100,7 @@ def bubble_sort(draw_info, ascending=True):
 
             if (num1 > num2 and ascending) or (num1 < num2 and not ascending):
                 lst[j], lst[j + 1] = lst[j + 1], lst[j]
-                draw_list(draw_info, {j: draw_info.BLUE, j + 1: draw_info.ORANGE}, True)
+                draw_list(draw_info, {j: draw_info.RED, j + 1: draw_info.GREEN}, True)
                 yield True
 
     return lst
@@ -119,7 +121,7 @@ def insertion_sort(draw_info, ascending=True):
             lst[i] = lst[i - 1]
             i -= 1
             lst[i] = current
-            draw_list(draw_info, {i - 1: draw_info.BLUE, i: draw_info.ORANGE}, True)
+            draw_list(draw_info, {i - 1: draw_info.RED, i: draw_info.GREEN}, True)
             yield True
 
     return lst
